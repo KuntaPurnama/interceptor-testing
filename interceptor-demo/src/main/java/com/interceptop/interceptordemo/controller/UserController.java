@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
   @PostMapping("/users")
-  public String insertStudent(@RequestHeader("user-auth-key") String auth, @RequestBody
+  public String insertStudent(@RequestHeader("user-auth") String auth, @RequestBody
       User user){
     return "Authorization " + auth + " valid dengan nama user : " + user.getName();
   }
