@@ -15,7 +15,7 @@ public class RequestHandlerInterceptor extends HandlerInterceptorAdapter {
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
       throws Exception {
 
-    if(StringUtils.isEmpty(request.getHeader("user-auth-key"))){
+    if(StringUtils.isEmpty(request.getHeader("user-auth"))){
       throw new InvalidHeaderException().builder().message("Headernya salah").build();
     }
     return super.preHandle(request, response, handler);
